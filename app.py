@@ -9,5 +9,10 @@ app = Flask(__name__)
 def index():
     return(render_template('index.html'))
 
+@app.route("/main", methods = ["GET", "POST"])
+def main():
+    name = request.form.get("q") # Thus is from the <form> in index
+    return(render_template('main.html'))
+
 if __name__ == "__main__":
     app.run()
