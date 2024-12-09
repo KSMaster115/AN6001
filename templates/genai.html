@@ -8,14 +8,25 @@
 <body>
 
     <div class = "container">
-        <h2>Main Menu</h2>
+        <h2>Generative AI</h2>
+
+        <p>
+            Please enter your query:
+        </p>
 
         <form action = "/genai" method = "post">
-            <p><input type = "submit" value = "Gen AI"></p>
+            <p><input type = "text" name = "genaitext"></p>
+            <p><input type = "submit" value = "Enter"</p>
         </form>
 
-        <form action = "/sentimentanalysis" method = "post">
-            <p><input type = "submit" value = "Sentiment Analyser"></p>
+        <p>
+            Response:<br>
+            {{genairesponse}}
+            <br>
+        </p>
+
+        <form action = "/main" method = "post">
+            <p><input type = "submit" value = "Back"></p>
         </form>
 
         <form action = "/" method = "post">
