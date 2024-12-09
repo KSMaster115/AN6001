@@ -14,20 +14,10 @@
             Please enter text you wish to have analysed:
         </p>
 
-        <form action = "/sentimentanalysis" method = "post">
+        <form action = "/SA_results" method = "post">
             <p><input type = "text" name = "analysetext"></p>
             <p><input type = "submit" value = "Enter"</p>
         </form>
-
-        <p>
-            The results are:<br>
-            {{textresult}}<br>
-            Polarity is:<br>
-            {{results}}
-        </p>
-        <p>
-            
-        </p>
 
         <form action = "/main" method = "post">
             <p><input type = "submit" value = "Back"></p>

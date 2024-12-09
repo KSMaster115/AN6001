@@ -18,6 +18,11 @@ def main():
 @app.route("/sentimentanalysis", methods = ["GET", "POST"])
 def sentimentanalysis():
     satext = request.form.get("analysetext")
+    return(render_template('sentimentanalysis.html'))
+    
+@app.route("/SA_results", methods = ["GET", "POST"])
+def SA_results():
+    satext = request.form.get("analysetext")
     if satext:
         results = textblob.TextBlob(satext).sentiment.polarity
 
@@ -28,10 +33,9 @@ def sentimentanalysis():
         else:
             textresult = "Negative"
 
-        return(render_template('sentimentanalysis.html', results = results, textresult = textresult))
+        return(render_template('SA_results.html', results = results, textresult = textresult))
     else:
         return(render_template('sentimentanalysis.html'))
-    
 
 if __name__ == "__main__":
     app.run()
